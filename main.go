@@ -8,18 +8,18 @@ import (
 	"github.com/google/uuid"
 )
 
-type Config struct {
+type uuidConfig struct {
 	lower bool
 	upper bool
 	num   int
 }
 
-var config Config
+var config uuidConfig
 
 func init() {
-	flag.BoolVar(&config.lower, "lower", true, "Generate UUID by lower case (default) ")
-	flag.BoolVar(&config.upper, "upper", false, "Generate UUID by upper case")
-	flag.IntVar(&config.num, "n", 1, "How many uuid to be generated")
+	flag.BoolVar(&config.lower, "lower", true, "Generate a lower case UUID (default)")
+	flag.BoolVar(&config.upper, "upper", false, "Generate a upper case UUID ")
+	flag.IntVar(&config.num, "n", 1, "Set UUID number")
 }
 
 func main() {
