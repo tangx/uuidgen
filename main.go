@@ -9,7 +9,7 @@ import (
 )
 
 type uuidConfig struct {
-	lower bool
+	// lower bool
 	upper bool
 	num   int
 }
@@ -17,8 +17,7 @@ type uuidConfig struct {
 var config uuidConfig
 
 func init() {
-	flag.BoolVar(&config.lower, "lower", true, "Generate a lower case UUID (default)")
-	flag.BoolVar(&config.upper, "upper", false, "Generate a upper case UUID ")
+	flag.BoolVar(&config.upper, "upper", false, "Generate a UPPER case UUID, (defalut is LOWER) ")
 	flag.IntVar(&config.num, "n", 1, "Set UUID number")
 }
 
@@ -33,10 +32,9 @@ func main() {
 				fmt.Println(strings.ToUpper(id))
 				return
 			}
-			// if config.lower {
+
 			fmt.Println(strings.ToLower(id))
 			return
-			// }
 		}()
 	}
 
