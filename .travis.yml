@@ -1,0 +1,22 @@
+language: go
+
+go:
+  - "1.11.x"
+
+install:
+  - CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -o uuidgen_${GOOS}_${GOARCH} main.go
+  - CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o uuidgen_${GOOS}_${GOARCH} main.go
+
+script:
+  - uuidgen -h
+  - uuidgen
+  - uuidgen -n 10 -upper
+
+deploy:
+  provider: releases
+  user: ${GITHUB_USERNAME}
+  password: ${GITHUB_PASSWORD}
+  file: uuidgen
+  skip_cleanup: true
+  on:
+    tags: true
