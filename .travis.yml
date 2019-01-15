@@ -9,7 +9,7 @@ install:
   - CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o uuidgen_darwin_amd64 main.go
 
 script:
-  - uuidgen -h
+  - uuidgen -h || exit 0
   - uuidgen
   - uuidgen -n 10 -upper
 
