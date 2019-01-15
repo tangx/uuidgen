@@ -16,7 +16,9 @@ deploy:
   provider: releases
   user: ${GITHUB_USERNAME}
   password: ${GITHUB_PASSWORD}
-  file: uuidgen
+  file: 
+    - uuidgen_linux_amd64
+    - uuidgen_darwin_amd64
   skip_cleanup: true
   on:
     tags: true
