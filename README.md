@@ -1,6 +1,7 @@
 # uuidgen
+[![Build Status](https://travis-ci.org/tangx/uuidgen.svg?branch=master)](https://travis-ci.org/tangx/uuidgen)
 
-Generate uuid
+Generate uuid 
 
 ## Install
 
